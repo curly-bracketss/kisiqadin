@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input placeholder="Adinizi daxil edin" type="text" id="inp">
+    <label><input name="sex" type="radio" id="kisi" />Kisi</label>
+    <label><input name="sex" type="radio" id="qadin" />Qadin</label>
+    <button id="btn">Ok</button>
+    <h3></h3>
+    <script>
+        const inp = document.getElementById('inp');
+        const btn = document.getElementById('btn');
+        const h3 = document.querySelector('h3');
+        const kisi = document.getElementById("kisi");
+        const qadin = document.getElementById("qadin");
+        btn.onclick = function () {
+            if (inp.value == "" && !(kisi.checked) && !(qadin.checked)) {
+                alert("Adinizi ve cinsinizi daxil edin")
+            }
+            else if (inp.value == "") {
+                alert("Adinizi daxil edin")
+            }
+            else if (!(kisi.checked) && !(qadin.checked)) {
+                alert("Cinsinizi daxil edin")
+            }
+            else {
+                if (kisi.checked) {
+                    h3.innerHTML = `Salam ${inp.value} bey, xos gelmisiniz! `;
+                }
+                else if (qadin.checked) {
+                    h3.innerHTML = `Salam ${inp.value} xanim, xos gelmisiniz`;
+                }
+            }
+        }
+
+
+    </script>
+</body>
+
+
+</html>
